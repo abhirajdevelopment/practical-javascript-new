@@ -5,11 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo App - Version 2</title>
+    <title>Game Store - Version 3</title>
+    <link rel="shortcut icon" href="fav-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="actions" id="actions">
+        <div>
+            <button id="display-games-btn">Display Games</button>
+            <button id="toggle-all-sold-games-btn">Toggle All Games</button>
+        </div>
+    
+        <div>
+            <input type="text" id="add-game-input" placeholder="Enter Title">
+            <button id="add-game-btn">Add Game</button>
+        </div>
+    
+        <div>
+            <input type="text" id="change-game-position-input" placeholder="Enter Position">
+            <input type="text" id="change-game-title-input" placeholder="Enter Title">
+            <button id="change-game-btn">Change Game</button>
+        </div>
+    
+        <div>
+            <input type="text" id="toggle-sold-position-input" placeholder="Enter Position">
+            <button id="toggle-sold-game-btn">Toggle Sold Game</button>
+        </div>
+    
+        <div>
+            <input type="text" id="delete-game-position-input" placeholder="Enter Position">
+            <button id="delete-game-btn">Delete Game</button>
+        </div>
+    </div>
+
+    <ul id="games-list" class="list-unstyled"></ul>
 
     <script src="script.js"></script>
 </body>
