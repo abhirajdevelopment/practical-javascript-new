@@ -71,14 +71,10 @@ var gameList = {
     }
 }
 
-// gameList.displayGames();
 gameList.addGame('Mario');
 gameList.addGame('GTA: San Andreas');
 gameList.addGame('Counter Strike: Global Offensive');
 gameList.addGame('Angry Birds');
-gameList.changeGame(0, 'NFS');
-// gameList.toggleSold(0);
-// gameList.toggleAllGames();
 
 var actions = document.getElementById('actions');
 
