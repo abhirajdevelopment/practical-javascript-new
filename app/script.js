@@ -76,45 +76,40 @@ gameList.addGame('GTA: San Andreas');
 gameList.addGame('Counter Strike: Global Offensive');
 gameList.addGame('Angry Birds');
 
-var actions = document.getElementById('actions');
-var displayGamesBtn = document.getElementById('display-games-btn');
-
-var addGameInput = document.getElementById('add-game-input');
-var addGameBtn = document.getElementById('add-game-btn');
-
-var changeGamePosition = document.getElementById('change-game-position-input');
-var changeGameTitle = document.getElementById('change-game-title-input');
-var changeGameBtn = document.getElementById('change-game-btn');
-
-var toggleSoldGamePosition = document.getElementById('toggle-sold-position-input');
-var toggleSoldGameBtn = document.getElementById('toggle-sold-game-btn');
-
-var toggleAllSoldGamesBtn = document.getElementById('toggle-all-sold-games-btn');
-
-var deleteGameInput = document.getElementById('delete-game-position-input');
-var deleteGameBtn = document.getElementById('delete-game-btn');
-
-actions.addEventListener('click', function (e) {
-    if (e.target.id === displayGamesBtn.id) {
+var handlers = {
+    displayGames: function () {
+        var displayGamesBtn = document.getElementById('display-games-btn');
         gameList.displayGames();
-    } else if (e.target.id === addGameBtn.id) {
+    },
+    addGame: function () {
+        var addGameInput = document.getElementById('add-game-input');
         gameList.addGame(addGameInput.value);
         addGameInput.value = '';
-    } else if (e.target.id === changeGameBtn.id) {
+    },
+    changeGame: function () {
+        var changeGamePosition = document.getElementById('change-game-position-input');
+        var changeGameTitle = document.getElementById('change-game-title-input');
         gameList.changeGame(changeGamePosition.value, changeGameTitle.value);
         changeGamePosition.value = '';
         changeGameTitle.value = '';
-    } else if (e.target.id === toggleSoldGameBtn.id) {
-        gameList.toggleSold(toggleSoldGamePosition.value);
-        toggleSoldGamePosition.value = '';
-    } else if (e.target.id === toggleAllSoldGamesBtn.id) {
-        gameList.toggleAllGames();
-    } else if (e.target.id === deleteGameBtn.id) {
+    },
+    deleteGame: function () {
+        var deleteGameInput = document.getElementById('delete-game-position-input');
         if (deleteGameInput.value.length > 0) {
             gameList.deleteGame(deleteGameInput.value);
             deleteGameInput.value = '';
         } else {
             console.log('Please enter a value');
         }
+    },
+    toggleSold: function () {
+        var toggleSoldGamePosition = document.getElementById('toggle-sold-position-input');
+        var toggleSoldGameBtn = document.getElementById('toggle-sold-game-btn');
+        gameList.toggleSold(toggleSoldGamePosition.value);
+        toggleSoldGamePosition.value = '';
+    },
+    toggleAllGames: function () {
+        var toggleAllSoldGamesBtn = document.getElementById('toggle-all-sold-games-btn');
+        gameList.toggleAllGames();
     }
-});
+}

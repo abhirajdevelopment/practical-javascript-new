@@ -11,31 +11,31 @@
 </head>
 
 <body>
-    <div class="actions" id="actions">
+    <div>
         <div>
-            <button id="display-games-btn">Display Games</button>
-            <button id="toggle-all-sold-games-btn">Toggle All Games</button>
+            <button onclick="handlers.displayGames()">Display Games</button>
+            <button onclick="handlers.toggleAllGames()">Toggle All Games</button>
         </div>
-    
+
         <div>
             <input type="text" id="add-game-input" placeholder="Enter Title">
-            <button id="add-game-btn">Add Game</button>
+            <button onclick="handlers.addGame()">Add Game</button>
         </div>
-    
+
         <div>
             <input type="text" id="change-game-position-input" placeholder="Enter Position">
             <input type="text" id="change-game-title-input" placeholder="Enter Title">
-            <button id="change-game-btn">Change Game</button>
+            <button onclick="handlers.changeGame()">Change Game</button>
         </div>
-    
+
         <div>
             <input type="text" id="toggle-sold-position-input" placeholder="Enter Position">
-            <button id="toggle-sold-game-btn">Toggle Sold Game</button>
+            <button onclick="handlers.toggleSold()">Toggle Sold Game</button>
         </div>
-    
+
         <div>
             <input type="text" id="delete-game-position-input" placeholder="Enter Position">
-            <button id="delete-game-btn">Delete Game</button>
+            <button onclick="handlers.deleteGame()">Delete Game</button>
         </div>
     </div>
 
