@@ -77,35 +77,40 @@ gameList.addGame('Counter Strike: Global Offensive');
 gameList.addGame('Angry Birds');
 
 var actions = document.getElementById('actions');
+var displayGamesBtn = document.getElementById('display-games-btn');
+
+var addGameInput = document.getElementById('add-game-input');
+var addGameBtn = document.getElementById('add-game-btn');
+
+var changeGamePosition = document.getElementById('change-game-position-input');
+var changeGameTitle = document.getElementById('change-game-title-input');
+var changeGameBtn = document.getElementById('change-game-btn');
+
+var toggleSoldGamePosition = document.getElementById('toggle-sold-position-input');
+var toggleSoldGameBtn = document.getElementById('toggle-sold-game-btn');
+
+var toggleAllSoldGamesBtn = document.getElementById('toggle-all-sold-games-btn');
+
+var deleteGameInput = document.getElementById('delete-game-position-input');
+var deleteGameBtn = document.getElementById('delete-game-btn');
 
 actions.addEventListener('click', function (e) {
     if (e.target.id === displayGamesBtn.id) {
-        var displayGamesBtn = document.getElementById('display-games-btn');
         gameList.displayGames();
     } else if (e.target.id === addGameBtn.id) {
-        var addGameInput = document.getElementById('add-game-input');
-        var addGameBtn = document.getElementById('add-game-btn');
         gameList.addGame(addGameInput.value);
         addGameInput.value = '';
     } else if (e.target.id === changeGameBtn.id) {
-        var changeGamePosition = document.getElementById('change-game-position-input');
-        var changeGameTitle = document.getElementById('change-game-title-input');
-        var changeGameBtn = document.getElementById('change-game-btn');
         gameList.changeGame(changeGamePosition.value, changeGameTitle.value);
         changeGamePosition.value = '';
         changeGameTitle.value = '';
     } else if (e.target.id === toggleSoldGameBtn.id) {
-        var toggleSoldGamePosition = document.getElementById('toggle-sold-position-input');
-        var toggleSoldGameBtn = document.getElementById('toggle-sold-game-btn');
         gameList.toggleSold(toggleSoldGamePosition.value);
         toggleSoldGamePosition.value = '';
     } else if (e.target.id === toggleAllSoldGamesBtn.id) {
-        var toggleAllSoldGamesBtn = document.getElementById('toggle-all-sold-games-btn');
         gameList.toggleAllGames();
     } else if (e.target.id === deleteGameBtn.id) {
         if (deleteGameInput.value.length > 0) {
-            var deleteGameInput = document.getElementById('delete-game-position-input');
-            var deleteGameBtn = document.getElementById('delete-game-btn');
             gameList.deleteGame(deleteGameInput.value);
             deleteGameInput.value = '';
         } else {
